@@ -5,7 +5,9 @@ The original CSV and LaTeX/PDF command-line generator are preserved.
 
 ## Deploy to Streamlit
 
-Ready to deploy: repository **DeltaLabo/work-packages**, branch **main**, entry
+Deployed at https://deltalab-work-packages.streamlit.app/, verified from the
+owner's public Streamlit profile and the matching repository link.
+Deployment: repository **DeltaLabo/work-packages**, branch **main**, entry
 point **app.py**. Dependencies are in the root requirements.txt. The web app
 generates PDFs in memory with ReportLab and does not need a TeX installation.
 
@@ -28,10 +30,10 @@ configured remote errors block loading rather than silently using stale data.
 The title is DeltaLAB: work packages. The transparent flat SVG appears to the
 right of the title, stacks on phones, and shared-password sign-in appears in the
 sidebar. Back to administration opens the confirmed
-https://deltalab-admi.streamlit.app/ in the same tab. Optional ADMIN_APP_URL can
+https://deltalab-admi.streamlit.app/ in a new tab. Optional ADMIN_APP_URL can
 override that public link. No account registration or new identity database is
-used. Give the deployed URL to connect Administration's existing
-WORK_PACKAGES_APP_URL setting; no deployment URL is guessed.
+used. Administration now has the verified deployed URL as its default;
+WORK_PACKAGES_APP_URL can override that public link.
 
 ## Web workflow
 

@@ -4,7 +4,7 @@ The user requested a deployable app and explicitly chose public browsing/PDF
 downloads with a shared password only for creation/editing. Repo is public.
 app.py is the Streamlit entry point on main. No individual accounts/registration.
 Branding uses the same transparent flat assets/images/logo.svg and scripts/ui.py
-as the other DeltaLAB apps: title left, logo right, responsive stacking, same-tab
+as the other DeltaLAB apps: title left, logo right, responsive stacking, native navigation
 Back to administration, default https://deltalab-admi.streamlit.app/.
 Private editing uses the sidebar. Preserve current passwords/access semantics.
 
@@ -13,8 +13,10 @@ Secrets: WORK_PACKAGES_PASSWORD, WORK_PACKAGES_TOKEN, WORK_PACKAGES_REPOSITORY
 no PRs. Optional ADMIN_APP_URL overrides the public navigation link. Blank password
 or token disables writes. No token permits labelled local read-only browsing;
 configured remote failures must not fall back to stale local data for writes.
-Tell the user when ready to deploy main/app.py. Do not guess a deployed URL;
-Administration already has a configurable WORK_PACKAGES_APP_URL waiting for it.
+Deployed URL https://deltalab-work-packages.streamlit.app/ was verified on
+2026-10-25 from the owner's public Streamlit profile, matching repository link,
+public package view and actual PDF download. Administration uses that default,
+with a WORK_PACKAGES_APP_URL override. Do not guess other deployment URLs.
 
 data/work_packages.csv is the only live catalog. Keep its schema, padded IDs,
 entered text, unknown columns and existing rows. No assistant directory belongs
@@ -44,3 +46,7 @@ LuaLaTeX CLI behavior. Never regenerate saved documents or edit live CSVs to tes
 Run python -m unittest discover -s tests -v. Tests must use fixtures/mocked GitHub.
 Use ignored tmp/pdfs for PDF rendering QA. Maintain README/AGENTS and push completed
 work. Do not change other DeltaLAB repositories by inference.
+
+Cross-app return navigation uses Streamlit native link buttons, opening a new
+tab. HTML links targeting the current app iframe caused redirect loops on
+Community Cloud during the deployed-app audit on 2026-10-25; do not restore them.
