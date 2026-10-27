@@ -40,7 +40,7 @@ No app download or preview writes source/output files; all are in memory.
 scripts/pdf.py uses ReportLab, bundled Vera fonts and logo_pdf.png (derived from
 the approved flat logo). No server TeX installation. Escape entered text, wrap
 long content, keep headings with following content and repeat headers/footers.
-Preserve scripts/generate_work_packages.py and its original PNG/JPG logos and
+Preserve scripts/generate_work_packages.py, its legacy PNG/JPG assets and
 LuaLaTeX CLI behavior. Never regenerate saved documents or edit live CSVs to test.
 
 Run python -m unittest discover -s tests -v. Tests must use fixtures/mocked GitHub.
@@ -50,3 +50,13 @@ work. Do not change other DeltaLAB repositories by inference.
 Cross-app return navigation uses Streamlit native link buttons, opening a new
 tab. HTML links targeting the current app iframe caused redirect loops on
 Community Cloud during the deployed-app audit on 2026-10-25; do not restore them.
+
+## Generated document branding
+
+Future document generation uses `assets/images/logo_pdf.png`, the transparent
+render of the approved flat `logo.svg`. Keep the two assets in sync. Retain
+legacy source images and existing saved documents; do not regenerate historical
+PDFs or signed letters as part of branding changes.
+
+Both web and offline CLI PDFs use this logo. Preserve the separate TEC
+institutional logo and existing saved output documents.

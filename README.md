@@ -63,9 +63,9 @@ python scripts/generate_work_packages.py
 python scripts/generate_work_packages.py 012026
 ```
 
-The CLI still uses LuaLaTeX and the original logos. It generates files in
+The CLI uses LuaLaTeX, the approved flat DeltaLAB logo and the original TEC logo. It generates files in
 output/tex/ and output/pdf/. The app never runs that compiler or modifies saved
-documents. Original data, source images and generator code are preserved.
+documents. Original data and legacy source images are preserved.
 
 ## Development
 
@@ -78,3 +78,13 @@ streamlit run app.py
 Tests use invented data and mock GitHub. They check public downloads, editing
 access, form reseeding, document pagination, concurrent saves, lost-response
 recovery and preservation of original/unknown fields. No live requests are saved.
+
+## Generated document branding
+
+Future document generation uses `assets/images/logo_pdf.png`, the transparent
+render of the approved flat `logo.svg`. Keep the two assets in sync. Retain
+legacy source images and existing saved documents; do not regenerate historical
+PDFs or signed letters as part of branding changes.
+
+Both web and offline CLI PDFs use this logo. Preserve the separate TEC
+institutional logo and existing saved output documents.

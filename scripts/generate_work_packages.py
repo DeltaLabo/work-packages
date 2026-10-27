@@ -16,7 +16,7 @@ DATA_CSV = ROOT / "data" / "work_packages.csv"
 OUTPUT_PDF_DIR = ROOT / "output" / "pdf"
 OUTPUT_TEX_DIR = ROOT / "output" / "tex"
 TEC_LOGO = ROOT / "assets" / "images" / "logo.jpg"
-DELTA_LOGO = ROOT / "assets" / "images" / "logodelta.png"
+DELTA_LOGO = ROOT / "assets" / "images" / "logo_pdf.png"
 
 REQUIRED_FIELDS = [
     "id",
